@@ -1,4 +1,4 @@
-import { App, Rect } from 'leafer-ui'
+import { App, Ellipse, Rect, Star } from 'leafer-ui'
 import '@leafer-in/editor' // 导入图形编辑器插件
 import { ReferenceLine } from './src' // 引入插件代码
 
@@ -19,20 +19,29 @@ const app = new App({
 //   editable: true,
 //   rotation: 290
 // })
-// const rect1 = new Rect({
-//   x: 200,
-//   y: 200,
-//   width: 200,
-//   height: 200,
-//   fill: getRandomColor(),
-//   editable: true,
-//   rotation: 45
-// })
+const rect1 = new Ellipse({
+  x: 200,
+  y: 200,
+  width: 200,
+  height: 200,
+  fill: getRandomColor(),
+  editable: true,
+  rotation: 45
+})
+const star = new Star({
+  width: 100,
+  height: 100,
+  corners: 3,
+  innerRadius: 0.15,
+  editable: true,
+  fill: 'rgb(50,205,121)'
+})
 // app.tree.add(rect)
-// app.tree.add(rect1)
+app.tree.add(rect1)
+app.tree.add(star)
 
 
-for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 3; i++) {
   const randomNumber = () => {
     return Math.random() * (300 - 50) + 50
   }

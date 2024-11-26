@@ -1,6 +1,6 @@
 {
   "name": "leafer-x-adsorption",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "dragonfly1111 <634401502@qq.com>",
   "license": "MIT",
   "type": "module",
@@ -29,7 +29,6 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@leafer-in/arrow": "^1.0.9",
     "@leafer-in/editor": "^1.0.9",
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-html": "^1.0.3",

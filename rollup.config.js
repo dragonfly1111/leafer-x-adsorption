@@ -13,7 +13,7 @@ import serve from 'rollup-plugin-serve'
 // config
 
 const basePath = '.'
-const globalName = 'LeaferX.selector' // <script /> 插件的全局变量名
+const globalName = 'LeaferX.referenceLine' // <script /> 插件的全局变量名
 const supportPlatforms = ['web','worker','node','miniapp']
 const external = {'@leafer-ui/core':  'LeaferUI'} // 声明外部依赖，不打进插件包，只引用
 
@@ -28,21 +28,21 @@ const platformName = process.env.PLATFORM
 const platform ={
     'all': {
         name: 'index', // output index.esm.js index.js
-        path:  basePath, 
+        path:  basePath,
         withFormat: supportPlatforms.includes('node') ? ['cjs'] : false,
         withGlobal: globalName,
         withMin: 'min',
         external
     }
-} 
+}
 
-const plugins = [ 
+const plugins = [
     nodeResolve({
         browser: true,
         preferBuiltins: false,
     }),
-    typescript({ 
-        tsconfig: './tsconfig.json' 
+    typescript({
+        tsconfig: './tsconfig.json'
     }),
     commonjs()
 ]
@@ -90,7 +90,7 @@ if(isDev) {
     const list = []
 
     p.forEach(c =>{
-        
+
         if(c.input && c.output) {
 
             list.push(c)
@@ -99,7 +99,7 @@ if(isDev) {
 
             const input = c.input || c.path + '/src/index.ts'
             const fileBase = c.path + '/dist/' + (c.name || platformName)
-            
+
             const global = c.withGlobal
             const min = c.withMin
             let external = c.external
@@ -114,7 +114,7 @@ if(isDev) {
                     if(c.withMin) list.push({ min, external, input, output: fileBase + (cjs ? '.' + min + '.cjs' :'.' + format + '.' + min + '.js'), format})
                 })
             }
-            
+
             if(global) {
                 if(c.fullGlobal) external = null
                 list.push({global, external, input, output: fileBase + '.js'})

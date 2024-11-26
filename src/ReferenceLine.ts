@@ -2,7 +2,7 @@
 import { App, DragEvent, Leafer, Line, Text, Rect, ZoomEvent } from '@leafer-ui/core'
 import { IBoundsData } from '@leafer/interface'
 import { IArrowType, ILeaf, ILeafer, IPointData } from 'leafer-ui'
-import { Arrow } from '@leafer-in/arrow'
+// import { Arrow } from '@leafer-in/arrow'
 
 enum Position {
   LEFT = 'left', // 左左交汇
@@ -232,17 +232,17 @@ export class ReferenceLine {
     const yOffset = this.getYOffset(target.getLayoutPoints('content', 'page'))
     const xOffset1 = this.getXOffset1(target.getLayoutPoints('content', 'page'))
     const yOffset1 = this.getYOffset1(target.getLayoutPoints('content', 'page'))
-    let arrow, text, reactObj
+    let text, reactObj
     if (obj.type === 'row') {
-      arrow = new Arrow({
-        x: obj.x,
-        y: obj.y,
-        width: obj.gutter,
-        strokeWidth: this.gutterOptions.strokeWidth,
-        startArrow: this.gutterOptions.startArrow,
-        endArrow: this.gutterOptions.endArrow,
-        stroke: this.gutterOptions.stroke,
-      })
+      // arrow = new Arrow({
+      //   x: obj.x,
+      //   y: obj.y,
+      //   width: obj.gutter,
+      //   strokeWidth: this.gutterOptions.strokeWidth,
+      //   startArrow: this.gutterOptions.startArrow,
+      //   endArrow: this.gutterOptions.endArrow,
+      //   stroke: this.gutterOptions.stroke,
+      // })
       if (obj.position === GutterPosition.LEFT) {
         // target.x = obj.x - target.width
         target.x = obj.x - xOffset1
@@ -266,16 +266,16 @@ export class ReferenceLine {
         zIndex: -1
       }
     } else if (obj.type === 'vertical') {
-      arrow = new Arrow({
-        x: obj.x,
-        y: obj.y,
-        width: obj.gutter,
-        rotation: 90,
-        strokeWidth: this.gutterOptions.strokeWidth,
-        startArrow: this.gutterOptions.startArrow,
-        endArrow: this.gutterOptions.endArrow,
-        stroke: this.gutterOptions.stroke,
-      })
+      // arrow = new Arrow({
+      //   x: obj.x,
+      //   y: obj.y,
+      //   width: obj.gutter,
+      //   rotation: 90,
+      //   strokeWidth: this.gutterOptions.strokeWidth,
+      //   startArrow: this.gutterOptions.startArrow,
+      //   endArrow: this.gutterOptions.endArrow,
+      //   stroke: this.gutterOptions.stroke,
+      // })
       if (obj.position === GutterPosition.TOP) {
         target.y = obj.y - yOffset1
       } else {
@@ -298,7 +298,7 @@ export class ReferenceLine {
         zIndex: -1
       }
     }
-    this.referenceLeafer.add(arrow)
+    // this.referenceLeafer.add(arrow)
     if(text) {
       this.referenceLeafer.add(text)
     }
@@ -557,13 +557,4 @@ export class ReferenceLine {
   public changeLineStatus(val: boolean) {
     this.lineOptions.showLine = val
   }
-
-  // 处理元素有旋转时的吸附偏移量
-  // private getOffset(target: ILeaf) {
-  //   if(target.rotation % 360 === 0) {
-  //     return target.height / 2
-  //   } else {
-  //     return
-  //   }
-  // }
 }
