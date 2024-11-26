@@ -4,7 +4,7 @@ Leafer边距吸附、间距吸附插件
 
 ## show
 
-![cover](./public/demo.png)
+![cover](https://github.com/dragonfly1111/leafer-x-adsorption/blob/main/public/image/demo.png?raw=true)
 
 ## 运行
 
