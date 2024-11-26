@@ -58,7 +58,7 @@ export interface GutterOptions {
 export interface LineOptions {
   showLine?: boolean // 是否开启边距吸附
   showLineNum?: number // 吸附检索数量
-  stroke?: string // 箭头颜色
+  stroke?: string // 线段颜色
   strokeWidth?: number // 线粗细
   adsorption?: number // 吸附像素范围-对齐
 }
