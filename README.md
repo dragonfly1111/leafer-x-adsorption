@@ -1,4 +1,4 @@
-# Leafer-x-referenceLine
+# Leafer-x-adsorption
 
 Leafer边距吸附、间距吸附插件
 
@@ -24,7 +24,7 @@ npm run test # 自动化测试
 ### install
 
 ```shell
-npm i leafer-x-ruler  
+npm i leafer-x-adsorption  
 ```
 
 ### use

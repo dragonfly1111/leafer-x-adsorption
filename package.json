@@ -1,6 +1,6 @@
 {
   "name": "leafer-x-adsorption",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "dragonfly1111 <634401502@qq.com>",
   "license": "MIT",
   "type": "module",
@@ -19,10 +19,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/leaferjs/leafer-x"
+    "url": "https://github.com/dragonfly1111/leafer-x-adsorption.git"
   },
-  "homepage": "https://github.com/leaferjs/leafer-x",
-  "bugs": "https://github.com/leaferjs/leafer-x/issues",
+  "homepage": "https://github.com/dragonfly1111/leafer-x-adsorption/tree/main",
+  "bugs": "https://github.com/dragonfly1111/leafer-x-adsorption/issues",
   "scripts": {
     "start": "cross-env NODE_ENV=development rollup -c -w",
     "build": "cross-env PLATFORM=all rollup -c",
